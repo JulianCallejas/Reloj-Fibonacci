@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
+import { Logo, Descripcion, Reloj, ListaFibonacci } from './components/index'
+
 
 function App() {
+  
+  const [hora, setHora] = useState(null);
+  const generarlista = () => setHora(new Date())
+  const limpiarLista = () => setHora(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <Logo />
+      <Descripcion />
+      <Reloj />
+      <div className='boton-box'>
+        <button
+          className='boton'
+          onClick={generarlista}
+          disabled={hora ? true : false}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Generar
+        </button>
+        <button
+          className='boton'
+          onClick={limpiarLista}
+        >
+          Limpiar
+        </button>
+      </div>
+      {hora && <ListaFibonacci hora={hora.toLocaleTimeString()} minutos={hora.getMinutes()} segundos={hora.getSeconds()} />}
+    </>
   );
 }
 
