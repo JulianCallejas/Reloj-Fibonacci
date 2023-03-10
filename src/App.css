@@ -69,6 +69,10 @@ p {
   background-color: #474c50;
 }
 
+.boton:disabled{
+  background-color: #5c5c5c;
+}
+
 h3{
   font-size: 1.1rem;
   text-align: center;
@@ -115,4 +119,21 @@ h3{
   justify-content: center;
   text-align: center; 
   margin-left: 10%;
+}
+
+.cambio-hora {
+  margin-left:-50px;
+  animation: flip 0.5s forwards;
+  transform-style: preserve-3d;
+}
+
+@keyframes flip {
+  0% { transform: rotateX(0); }
+  50% { transform: rotateX(90deg); }
+  from { 
+    opacity: 1;
+  }
+  to { 
+    opacity: 0;
+  }
 }

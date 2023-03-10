@@ -34,9 +34,14 @@ function GraficoFibonacci(props) {
             >
                 <Tooltip />
                 <XAxis />
-                <YAxis />
+                <YAxis orientation="right" tickMargin={-0}  />
                 <Legend />
-                <Line type="monotone" dataKey="serie-Fibonacci" stroke="#014909" dot={false} strokeWidth={2} />
+                <Line type="monotone"
+                    dataKey="serie-Fibonacci"
+                    stroke="#014909"
+                    dot={false}
+                    stokeWidth={2}
+                />
             </LineChart>
         </ResponsiveContainer>
 
